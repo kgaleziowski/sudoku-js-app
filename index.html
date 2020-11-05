@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudoku.js</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- - Icons made by <a href="https://www.flaticon.com/authors/surang" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+    <link rel="icon" href="./img/sudoku.png" type="image/gif" sizes="16x16">
+    <script src="https://kit.fontawesome.com/a30f59a560.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="wrapper" class="wrapper">
+        <div class="header">
+            <div id='inverse-btn' tabindex="0" class="header-btn inverse-btn">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+            <a href="./index.html">
+                <h1 id='title'>sudoku.js</h1>
+            </a>
+            <a class="header-btn" href="./ranking/index.html">
+                <div tabindex="0" class="ranking-btn">
+                    <i class="fas fa-trophy"></i>
+                </div>
+            </a>
+        </div>
+        <div class="btns">
+            <button id="easy" class="button difficulty-btns">
+                <div class="spin"></div>
+                <p>Easy</p>
+            </button>
+            <button id="medium" class="button difficulty-btns">
+                <div class="spin"></div>
+                <p>Medium</p>
+            </button>
+            <button id="hard" class="button difficulty-btns">
+                <div class="spin"></div>
+                <p>Hard</p>
+            </button>
+        </div>
+        <div class="grid">
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="square">
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="1 sketch-number"></p>
+                        <p class="2 sketch-number"></p>
+                        <p class="3 sketch-number"></p>
+                        <p class="4 sketch-number"></p>
+                        <p class="5 sketch-number"></p>
+                        <p class="6 sketch-number"></p>
+                        <p class="7 sketch-number"></p>
+                        <p class="8 sketch-number"></p>
+                        <p class="9 sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+                <div tabindex="0" class="input-div">
+                    <span class="input-value"></span>
+                    <div class="sketch-div">
+                        <p class="one sketch-number"></p>
+                        <p class="two sketch-number"></p>
+                        <p class="three sketch-number"></p>
+                        <p class="four sketch-number"></p>
+                        <p class="five sketch-number"></p>
+                        <p class="six sketch-number"></p>
+                        <p class="seven sketch-number"></p>
+                        <p class="eight sketch-number"></p>
+                        <p class="nine sketch-number"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="numbers-btns">
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+        </div>
+        <div class="bottom-menu">
+            <div class="left-side-btns">
+                <div tabindex="0" class="menu-btn" id="solve">
+                    <i class="fas fa-brain"></i>
+                    <p class="btn-text">Solve</p>
+                </div>
+                <div tabindex="0" class='menu-btn' id="clear">
+                    <i class="fas fa-eraser"></i>
+                    <p class="btn-text">Clear</p>
+                </div>
+                <div tabindex="0" class='menu-btn' id="sketch">
+                    <i class=" fas fa-pencil-alt"><span class="on-off">OFF</span></i>
+                    <p class="btn-text">Sketch</p>
+                </div>
+                <div tabindex="0" class='menu-btn' id="help">
+                    <i class="fas fa-question"></i>
+                    <p class="btn-text">Hint</p>
+                </div>
+            </div>
+            <div class="right-side-stats">
+                <label for="nickname">Ranking</label>
+                <div class="form-div">
+                    <form id="database-add" action="./ranking/index.html" method="POST">
+                        <input id="nickname-input" name="nickname" type="text" maxlength="20" placeholder="nickname"
+                            onkeypress="return event.keyCode != 13;">
+                    </form>
+                    <p class="rank-paragraph">Time: <span id="time">00:00</span><span class="punishment"></span></p>
+                    <p class="rank-paragraph">Hints: <span id="hints">0</span>/5<span class="punishment"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>designed and developed by Kajetan Gałęziowski - kajgal@st.amu.edu.pl</p>
+        </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
